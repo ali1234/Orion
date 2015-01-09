@@ -601,8 +601,8 @@ GtkComboBox.combobox-entry .button:insensitive {
  * list boxes *
  **************/
 .list {
-    background-color: shade(@theme_bg_color, 0.97);
-    color: @theme_fg_color;
+    background-image: none;
+    background-color: transparent;
 }
 
 .list-row {
@@ -610,6 +610,7 @@ GtkComboBox.combobox-entry .button:insensitive {
     border-radius: 0;
     padding: 3px;
     background-image: none;
+    background-color: transparent;
 }
 
 .list-row:hover {
