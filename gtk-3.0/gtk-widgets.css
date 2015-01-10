@@ -1332,40 +1332,27 @@ GtkModelButton.button:selected {
     background-image: none;
     background-clip: border-box;
 
-    -GtkNotebook-initial-gap: 10;
+    -GtkNotebook-initial-gap: 0;
     -GtkNotebook-arrow-spacing: 5;
     -GtkNotebook-tab-curvature: 0;
-    -GtkNotebook-tab-overlap: 1;
-    -GtkNotebook-has-tab-gap: false;
+    -GtkNotebook-tab-overlap: -1;
+    -GtkNotebook-has-tab-gap: true;
 }
 
 .notebook.frame {
     border-width: 1px;
+    border-radius: 3px;
+    padding: 0;
+    margin: 0;
 }
 
 .notebook.header {
     border-width: 0;
-    background-color: shade(@theme_base_color, 0.85);
+    background-color: transparent; /*(shade(@theme_base_color, 0.85);*/
 }
 
 .notebook.header.frame {
-    border-color: shade(@theme_base_color, 0.75);
-}
-
-.notebook.header.frame.top {
-    border-width: 1px 1px 0 1px;
-}
-
-.notebook.header.frame.right {
-    border-width: 1px 1px 1px 0;
-}
-
-.notebook.header.frame.bottom {
-    border-width: 0 1px 1px 1px;
-}
-
-.notebook.header.frame.left {
-    border-width: 1px 0 1px 1px;
+    border-width: 0;
 }
 
 .notebook GtkViewport {
@@ -1377,19 +1364,21 @@ GtkModelButton.button:selected {
 .notebook tab {
     padding: 4px 6px;
     border-style: solid;
-    border-width: 1px;
-    border-color: transparent;
-    background-color: transparent;
+    border-width: 1px 1px 0 1px;
+    border-color: shade(@theme_base_color, 0.7);
+    border-radius: 3px;
+    background-color: shade(@theme_base_color, 0.97);
     background-image: none;
 }
 
 .notebook tab:active {
-    background-color: transparent;
+    background-color: @theme_base_color;
     background-image: none;
 }
 
 .notebook tab.top {
-    border-bottom-width: 2px;
+/*    border-bottom-width: 2px;*/
+    border-width: 1px 1px 0 1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -1400,10 +1389,12 @@ GtkModelButton.button:selected {
 
 .notebook tab.top:active {
     border-bottom-color: @theme_selected_bg_color;
+    padding: 5px 6px;
 }
 
 .notebook tab.right {
-    border-left-width: 2px;
+/*    border-left-width: 2px;*/
+    border-width: 1px 1px 1px 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -1414,10 +1405,12 @@ GtkModelButton.button:selected {
 
 .notebook tab.right:active {
     border-left-color: @theme_selected_bg_color;
+    padding: 4px 7px;
 }
 
 .notebook tab.bottom {
-    border-top-width: 2px;
+    border-width: 0 1px 1px 1px;
+/*    border-top-width: 2px;*/
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
@@ -1428,10 +1421,12 @@ GtkModelButton.button:selected {
 
 .notebook tab.bottom:active {
     border-top-color: @theme_selected_bg_color;
+    padding: 5px 6px;
 }
 
 .notebook tab.left {
-    border-right-width: 2px;
+    border-width: 1px 0 1px 1px;
+/*    border-right-width: 2px;*/
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -1442,6 +1437,7 @@ GtkModelButton.button:selected {
 
 .notebook tab.left:active {
     border-right-color: @theme_selected_bg_color;
+    padding: 4px 7px;
 }
 
 .notebook tab GtkLabel {
